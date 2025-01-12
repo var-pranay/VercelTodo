@@ -1,0 +1,13 @@
+/* Background and reset styles */
+body {
+    background-color: #f7f9fc;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  /* Custom placeholder styles */
+  input::placeholder {
+    color: #999;
+  }
+  

@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { GreeterComponent } from '../greeter/greeter.component';
 import { CounterComponent } from "../counter/counter.component";
-
+import {SamilComponent} from "../samil/samil.component"
 @Component({
   selector: 'app-home',
-  imports: [GreeterComponent, CounterComponent],
+  imports: [SamilComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   // providers:[TodosService]
