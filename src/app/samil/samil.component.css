@@ -1,13 +1,48 @@
-/* Background and reset styles */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --input-bg-color: #f7f7f7;
+  --input-text-color: #000000;
+  --button-bg-color: #007bff;
+  --button-text-color: #ffffff;
+  --task-bg-color: #f7f7f7;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --input-bg-color: #333333;
+  --input-text-color: #ffffff;
+  --button-bg-color: #1a73e8;
+  --button-text-color: #ffffff;
+  --task-bg-color: #333333;
+}
+
 body {
-    background-color: #f7f9fc;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden; /* Prevent scrolling */
-  }
-  
-  /* Custom placeholder styles */
-  input::placeholder {
-    color: #999;
-  }
-  
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+input {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+  border: 1px solid var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+.list-group-item {
+  background-color: var(--task-bg-color);
+  color: var(--text-color);
+}

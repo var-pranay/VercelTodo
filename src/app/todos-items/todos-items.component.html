@@ -1,6 +1,25 @@
-<li appHighlightCompleteTodo [isCompleted]="todo().completed" class="todo__item">
+<!-- <li appHighlightCompleteTodo [isCompleted]="todo().completed" class="todo__item">
     <input id="todo-{{todo().id}}" type="checkbox" [checked]="todo().completed"
     (change)="EventTriggerTodo()"
     >
     <label for="todo-{{todo().id}}">{{todo().title}}</label> 
- </li>
+ </li> -->
+
+ <!-- <li appHighlightCompleteTodo [isCompleted]="todo().completed" class="todo__item">
+    <input id="todo-{{todo().id}}" type="checkbox" [checked]="todo().completed"
+    (change)="EventTriggerTodo()">
+    <label for="todo-{{todo().id}}">{{todo().title}}</label> 
+    <button class="delete-btn">
+        <span class="delete-icon">🗑️</span>
+    </button>
+</li> -->
+
+<li appHighlightCompleteTodo [isCompleted]="todo().completed" class="todo__item">
+    <input id="todo-{{todo().id}}" type="checkbox" [checked]="todo().completed"
+    (change)="EventTriggerTodo()">
+    <label for="todo-{{todo().id}}">{{todo().title}}</label> 
+    <button class="delete-btn" (click)="deleteTodo()">
+        <i class="fas fa-trash-alt delete-icon"></i>
+    </button>
+</li>
+

@@ -11,8 +11,12 @@ import { HighlightCompleteTodoDirective } from '../directive/highlight-complete-
 export class TodosItemsComponent {
   todo = input.required<Todo>();
   trigerTodo = output<Todo>();
+  vardeleteTodo = output<Todo>();
 
   EventTriggerTodo = ()=>{
     this.trigerTodo.emit(this.todo());
   }
+  deleteTodo(): void {
+    this.vardeleteTodo.emit(this.todo());
+}
 }

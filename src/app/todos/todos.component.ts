@@ -3,6 +3,7 @@ import { TodosService } from '../services/todos.service';
 import { catchError, retry, single } from 'rxjs';
 import { Todo } from '../models/todos.type';
 import { TodosItemsComponent } from '../todos-items/todos-items.component';
+import { StorageServiceService } from '../services/storage-service.service';
 
 @Component({
   selector: 'app-todos',
@@ -11,6 +12,7 @@ import { TodosItemsComponent } from '../todos-items/todos-items.component';
   styleUrl: './todos.component.css'
 })
 export class TodosComponent implements OnInit {
+  constructor(private storage: StorageServiceService) {}
   todoservice = inject(TodosService);
   todoitems = signal<Array<Todo>>([]);
   ngOnInit(): void {
@@ -62,7 +64,19 @@ export class TodosComponent implements OnInit {
   
       // Save the updated array to localStorage
       localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      console.log(JSON.stringify(updatedTodos));
       return updatedTodos;
     });
   };
+
+  deleteObject(val: Todo): void {
+    let array = this.storage.getArray();
+
+    // Filter out the object with the matching `id`
+    array = array.filter(item => item.id !== val.id);
+
+    // Save the updated array back to local storage
+    this.storage.saveArray(array);
+    this.todoitems.set(this.storage.getArray());
+  }
 }

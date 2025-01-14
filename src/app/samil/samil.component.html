@@ -1,21 +1,35 @@
-<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div 
-      class="container bg-white rounded shadow p-4" 
-      style="max-width: 400px; transform: translateY(-15%);">
-      <h1 class="text-center mb-4">My To-Do List</h1>
-  
-      <!-- Input field and button -->
-      <div class="input-group mb-3">
-        <input 
-          type="text" 
-          class="form-control" 
-          placeholder="Enter your task" 
-        />
-        <button class="btn btn-primary" (click)="addTask()">Add Task</button>
-      </div>
-  
-      <!-- Task list -->
-      
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div 
+    class="container bg-white rounded shadow p-4" 
+    style="max-width: 400px; transform: translateY(-10%);">
+    <h2 class="text-center mb-4">Tasks: {{taskCount()}}</h2>
+
+    <!-- Theme Toggle Button -->
+    <!-- <div class="text-end mb-3">
+      <button class="btn btn-secondary" (click)="toggleTheme()">
+        {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+      </button>
+    </div> -->
+
+    <!-- Input field and button -->
+    <div class="input-group mb-3">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Enter your task" 
+        #txttask
+      />
+      <button class="btn btn-primary" (click)="addTask(txttask)">Add Task</button>
     </div>
+
+    <!-- Task list -->
+    <!-- <ul class="list-group">
+      <li 
+        *ngFor="let task of tasks" 
+        class="list-group-item d-flex justify-content-between align-items-center">
+        {{ task }}
+        <button class="btn btn-sm btn-danger" (click)="deleteTask(task)">Remove</button>
+      </li>
+    </ul> -->
   </div>
-  
+</div>
