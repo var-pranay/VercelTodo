@@ -6,24 +6,25 @@ import { retry } from 'rxjs';
   providedIn: 'root'
 })
 export class TodosService {
-  todoitems : Array<Todo> = [{
-    id: 1,
-    title: 'learnAngular',
-    completed: true,
-    userId: 1
-  },
-  {
-    id: 2,
-    title: 'SqlQuestion',
-    completed: false,
-    userId: 1
-  },
-  {
-    id: 3,
-    title: 'DSA BinarySearch',
-    completed: false,
-    userId: 1
-  }
+  todoitems : Array<Todo> = [
+  // {
+  //   id: 1,
+  //   title: 'learnAngular',
+  //   completed: true,
+  //   userId: 1
+  // },
+  // {
+  //   id: 2,
+  //   title: 'SqlQuestion',
+  //   completed: false,
+  //   userId: 1
+  // },
+  // {
+  //   id: 3,
+  //   title: 'DSA BinarySearch',
+  //   completed: false,
+  //   userId: 1
+  // }
 ]
   http = inject(HttpClient)
   TodosFromApiCall = (): Todo[]=>{
